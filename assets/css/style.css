@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+table {
+    /*border: 1px solid black;*/
+}
+
+table th, td {
+    padding: 3px;
+}
+
+table th {
+    background-color: #adff2f;
+}
+
+.center {
+    text-align: center;
+}
