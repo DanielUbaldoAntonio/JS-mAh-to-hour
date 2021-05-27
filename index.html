@@ -1,7 +1,3 @@
-<!--
-@author Daniel Ubaldo Antônio <danielubaldovrb@gmail.com>
-Created at: 05/05/2021 14:25
--->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,11 +7,15 @@ Created at: 05/05/2021 14:25
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="robot" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
-    <title>Cálculo de tempo de recarga</title>
-    <link rel="stylesheet" href="assets/css/style.min.css">
+    <title>Calculadora de tempo de recarga de pilha</title>
+    <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="assets/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="assets/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="assets/css/style.min.css" rel="stylesheet">
 </head>
 <body>
-<h1>Cálculo de tempo de recarga</h1>
+<h1>Calculadora de tempo de recarga de pilha</h1>
 <table>
     <tr>
         <th colspan="3">Carregador PHILIPS Universal Multilife SCB1485NB</th>
@@ -51,11 +51,11 @@ Created at: 05/05/2021 14:25
         <td class="center">10½ h</td>
     </tr>
 </table>
-<form action="calculateTime.php" autocomplete="off" id="timeCalculationForm" method="post" name="timeCalculationForm">
+<form action="" autocomplete="off" id="timeCalculationForm" method="post" name="timeCalculationForm">
     <p>
         <label for="batterySize">Tamanho da pilha</label>
         <br>
-        <select id="batterySize" name="batterySize" onchange="changeBattery(this)">
+        <select id="batterySize" name="batterySize">
             <option selected value="1">AA - Pilha comum</option>
             <option value="2">AAA - Pilha palito</option>
         </select>
@@ -69,16 +69,16 @@ Created at: 05/05/2021 14:25
                    required type="number" value="2100">
         </p>
         <p>
-            <label for="deviceApproxChargeTime">Tempo aprox. de recarga (hora)</label>
+            <label for="deviceApproxChargeTime">Tempo aproximado de recarga (hora)</label>
             <br>
-            <input id="deviceApproxChargeTime" min="1.0" minlength="1" name="deviceApproxChargeTime"
+            <input id="deviceApproxChargeTime" min="1.0" minlength="3" name="deviceApproxChargeTime"
                    pattern="^\d{1,2}\.\d{1,2}$"
                    placeholder="Ex.: 12.5" required title="Use ponto para separar os decimais" type="text"
                    value="12.5">
         </p>
     </fieldset>
     <fieldset>
-        <legend>Sobre a bateria a ser recarregada</legend>
+        <legend>Sobre a pilha a ser recarregada</legend>
         <p>
             <label for="batteryCapacity">Capacidade da pilha (mAh)</label>
             <br>
@@ -91,6 +91,7 @@ Created at: 05/05/2021 14:25
     <button type="reset">Limpar</button>
 </form>
 <p id="approxChargeTime"></p>
+<script src="assets/js/MAhToHour.min.js"></script>
 <script src="assets/js/bottom-scripts.min.js"></script>
 </body>
 </html>
